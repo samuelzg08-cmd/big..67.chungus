@@ -1,0 +1,34 @@
+<label>Segundo numero</label>
+<input type="text" id="numeros"><br><br>
+
+<button onclick="calcularPromedio()">Calcular</button>
+<script>
+
+function calcularPromedio () {
+let entrada = document.getElementById ("numeros").value;
+
+let arreglo = entrada.split(",");
+
+let suma = 0;
+
+for (let i = 0; i < arreglo.length; i++){
+
+let numero = parseFloat (arreglo[i]);
+
+if (isNaN(numero)) {
+
+    alert("Errror: Ingresa solo numeros separados");
+    return;
+}
+
+suma+=numero
+
+}
+
+let promedio = suma/ arreglo.length;
+
+alert("El promedio es: " + promedio);
+
+
+}
+</script>

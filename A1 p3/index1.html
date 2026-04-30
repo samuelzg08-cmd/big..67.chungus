@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suma de número</title>
+</head>
+<body>
+
+    <h2>Sumar dos números</h2>
+
+    <label>Primer número</label>
+    <input type="number" id="num1"><br><br>
+
+      <label>Segundo número</label>
+    <input type="number" id="num2"><br><br>
+
+   <button onclick="sumar()">Sumar</button>
+   <button onclick="restar()">Restar</button>
+ <button onclick="mult()">Multiplicar</button>
+ <button onclick="div()">dividir</button>
+ <button onclick="elev()">raiz</button>
+ <br> <br>
+   <h2>Calculo de Formula General</h2>
+
+    <label>Primer número</label>
+    <input type="number" id="x1"><br><br>
+
+      <label>Segundo número</label>
+    <input type="number" id="x2"><br><br>
+
+     <label>Tercer número</label>
+    <input type="number" id="x3"><br><br>
+
+ <button onclick="fg()">Formula General Positiva</button>
+ <button onclick="fgn()">Formula General Negativa</button>
+
+ <h2>Formula de Cramer</h2>
+
+  <label>Primer número</label>
+    <input type="number" id="a1"><br><br>
+
+      <label>Segundo número</label>
+    <input type="number" id="b1"><br><br>
+
+     <label>Tercer número</label>
+    <input type="number" id="c1"><br><br>
+
+     <label>Cuarto número</label>
+    <input type="number" id="a2"><br><br>
+
+      <label>Quinto número</label>
+    <input type="number" id="b2"><br><br>
+
+     <label>Sexto número</label>
+    <input type="number" id="c2"><br><br>
+    <button onclick="cra()"> y </button>
+    <button onclick="cran()"> x </button>
+   <script>
+
+    function sumar() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("Por favor ingresar ambos números");
+            return;
+        }
+        let resultado = n1 + n2 ;
+        alert("la suma es: " + resultado);
+    }
+
+
+    function restar() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("Por favor ingresar ambos números");
+            return;
+        }
+        let resultado = n1 - n2 ;
+        alert("la resta es: " + resultado);
+    }
+
+    function mult() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("Por favor ingresar ambos números");
+            return;
+        }
+        let resultado = n1 * n2 ;
+        alert("la multiplicacion es: " + resultado);
+    }
+
+      function div() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("Por favor ingresar ambos números");
+            return;
+        }
+        let resultado = n1 / n2 ;
+        alert("la division es: " + resultado);
+    }
+
+    function elev() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+
+         if (isNaN(n1)) {
+            alert("Por favor ingresar numero 1");
+            return;
+        }
+        
+        let resultado = Math.sqrt (n1) ;
+        alert("la raiz es: " + resultado);
+    }
+
+     function fg() {
+        let n1 = parseFloat(document.getElementById("x1").value);
+
+        let n2 = parseFloat(document.getElementById("x2").value);
+        let n3 = parseFloat(document.getElementById("x3").value);
+
+
+         if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+            alert("Por favor ingresar numeros");
+            return;
+        }
+        
+        
+        let operacion = -n2 + Math.sqrt(n2*n2-4*n1*n3)/2*n1;
+        
+       
+         
+        alert("la x es: " + operacion);
+        
+    }
+
+     function fgn() {
+        let n1 = parseFloat(document.getElementById("x1").value);
+        let n2 = parseFloat(document.getElementById("x2").value);
+        let n3 = parseFloat(document.getElementById("x3").value);
+
+
+         if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+            alert("Por favor ingresar numeros");
+            return;
+        }
+        
+        
+        let operacion = -n2 - Math.sqrt(n2*n2-4*n1*n3)/2*n1;
+        
+       
+         
+        alert("la x es: " + operacion);
+    }
+
+     function cra() {
+        let n1 = parseFloat(document.getElementById("a1").value);
+        let n2 = parseFloat(document.getElementById("b1").value);
+        let n3 = parseFloat(document.getElementById("c1").value);
+         let n4 = parseFloat(document.getElementById("a2").value);
+        let n5 = parseFloat(document.getElementById("b2").value);
+        let n6 = parseFloat(document.getElementById("c2").value);
+
+
+         if (isNaN(n1) || isNaN(n2) || isNaN(n3) || isNaN(n4) || isNaN(n5) || isNaN(n6)) {
+            alert("Por favor ingresar numeros");
+            return;
+        }
+        
+        
+        let operacion = n1*n6;
+         let operacion2 =n1*n5 ;
+         let operacionn =-operacion;
+        let operacion3 = operacionn+n3/operacion2+n2;
+        let operacion4 =-operacion3;
+        
+
+         
+        alert("la y es: " + operacion4);
+    }
+
+     function cran() {
+        let n1 = parseFloat(document.getElementById("a1").value);
+        let n2 = parseFloat(document.getElementById("b1").value);
+        let n3 = parseFloat(document.getElementById("c1").value);
+         let n4 = parseFloat(document.getElementById("a2").value);
+        let n5 = parseFloat(document.getElementById("b2").value);
+        let n6 = parseFloat(document.getElementById("c2").value);
+
+
+         if (isNaN(n1) || isNaN(n2) || isNaN(n3) || isNaN(n4) || isNaN(n5) || isNaN(n6)) {
+            alert("Por favor ingresar numeros");
+            return;
+        }
+        
+        
+        let operacion = n1*n6;
+         let operacion2 =n1*n5 ;
+         let operacionn =-operacion;
+        let operacion3 = operacionn+n3/operacion2+n2;
+        let operacion4 =-operacion3;
+        let operacion5= n5*operacion4;
+        let operacionn2 = -operacion5
+        let operacion6= operacionn2 + n6 /n4 ;
+      
+
+         
+        alert("la x es: " + operacion6);
+    }
+
+
+
+
+   </script>
+    
+</body>
+</html>
